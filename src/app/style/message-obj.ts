@@ -1,6 +1,6 @@
 export interface MessageObj {
-  message:string;
-  messageId:number;
-  userId:number
-  time:Date
+  message: string;
+  messageId: number;
+  userId: number;
+  time: Date;
 }

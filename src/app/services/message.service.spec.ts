@@ -1,19 +1,19 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { MessageObjects } from '../data/data'
+import { MessageObjects } from '../data/data';
 import { MessageService } from './message.service';
 import { MessageObj } from '../style/message-obj';
 
 describe('MessageService', () => {
-  let testMessage1:MessageObj;
-  let testMessage2:MessageObj;
+  let testMessage1: MessageObj;
+  let testMessage2: MessageObj;
   let service;
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [MessageService]
     });
     service = TestBed.get(MessageService);
-    testMessage1 = {message: "hello",messageId:0,userId:0,time: new Date()};
-    testMessage2 = {message:"world",messageId:1,userId:0,time: new Date()};
+    testMessage1 = {message: 'hello', messageId: 0, userId: 0, time: new Date()};
+    testMessage2 = {message: 'world', messageId: 1, userId: 0, time: new Date()};
     MessageObjects.push(testMessage1);
     MessageObjects.push(testMessage2);
   });
