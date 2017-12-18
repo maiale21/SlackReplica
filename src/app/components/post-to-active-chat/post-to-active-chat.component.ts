@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, OnDestroy} from '@angular/core';
+<<<<<<< HEAD
 
 import { MessageObj } from '../../objects/message-obj';
 import { CreateMessageService } from '../../services/create-message.service';
@@ -7,15 +8,24 @@ import { Subscription } from 'rxjs/Subscription';
 import { MessageObjects } from '../../data/data';
 // import {ActiveUsersService} from '../../services/active-user.service'
 
+=======
+import { MessageObj } from '../../style/message-obj'
+import { CreateMessageService } from '../../services/create-message.service'
+import { Subscription } from 'rxjs/Subscription'
+>>>>>>> 165caedf811d2eb83b60ec24910ee6426655a93b
 
 @Component({
   selector: 'app-post-to-active-chat',
   templateUrl: './post-to-active-chat.component.html',
-  styleUrls: ['./post-to-active-chat.component.css'],
-  // subscription
+  styleUrls: ['./post-to-active-chat.component.css']
 })
+<<<<<<< HEAD
 export class PostToActiveChatComponent { // implements OnInit {
   constructor(private createMessageService: CreateMessageService) {
+=======
+export class PostToActiveChatComponent {
+  constructor(private createMessageService:CreateMessageService){
+>>>>>>> 165caedf811d2eb83b60ec24910ee6426655a93b
 
   }
 
@@ -25,46 +35,4 @@ export class PostToActiveChatComponent { // implements OnInit {
     message.value = '';
   }
 
-  // clearMessage():void{
-  //   this.messageService.clearMessage();
-  // }
-
-
-
-
 }
-//
-// message:MessageObj;
-// subscription:Subscription;
-  //
-  // constructor(private service:MessageService) {
-  // }
-  // ngOnInit() {
-  // }
-  //
-  // createMessage(message:any){
-  //   let messageObj:MessageObj = {
-  //     message:message.value,
-  //     messageId: this.generateId(),
-  //     userId: 0,
-  //     time: new Date()
-  //   }
-  //   message.value = "";
-  //   this.postMessage(messageObj);
-  // }
-  //
-  // postMessage(messageObj:MessageObj){
-  //   this.service.addMessage(messageObj);
-  //
-  //   // console.log(messageObj.time.getDate());
-  //   // console.log(messageObj.time.getMonth());
-  //   // console.log(messageObj.time.getFullYear());
-  //
-  //   //send to service
-  // }
-  //
-  // generateId():number{
-  //   return new Date().getTime();
-  // }
-//
-// }
