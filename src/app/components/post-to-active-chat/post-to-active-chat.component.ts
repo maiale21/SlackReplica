@@ -1,8 +1,12 @@
 import { Component, OnInit, EventEmitter, Output, OnDestroy} from '@angular/core';
-import { MessageObj } from '../../style/message-obj';
+
+import { MessageObj } from '../../objects/message-obj';
 import { CreateMessageService } from '../../services/create-message.service';
 import { Subscription } from 'rxjs/Subscription';
 // import {ActiveUsersService} from '../../services/active-user.service'
+import { MessageObjects } from '../../data/data';
+// import {ActiveUsersService} from '../../services/active-user.service'
+
 
 @Component({
   selector: 'app-post-to-active-chat',
@@ -15,7 +19,8 @@ export class PostToActiveChatComponent { // implements OnInit {
 
   }
 
-  makePost(message: any): void {
+
+  makePost(message: any): void { // HTMLDataElement
     this.createMessageService.addMessage(message.value);
     message.value = '';
   }

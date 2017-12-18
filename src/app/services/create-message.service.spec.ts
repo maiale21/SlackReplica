@@ -7,7 +7,7 @@ describe('CreateMessageService', () => {
     TestBed.configureTestingModule({
       providers: [CreateMessageService]
     });
-    const service = TestBed.get(CreateMessageService)
+    const service = TestBed.get(CreateMessageService);
   });
 
   it('should be created', () => {
@@ -17,5 +17,4 @@ describe('CreateMessageService', () => {
   it('should create a message object', () => {
     expect(this.service.createMessageObj('hello').message).toEqual('hello');
   });
-  
 });

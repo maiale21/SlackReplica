@@ -1,7 +1,7 @@
 import { TestBed, inject } from '@angular/core/testing';
 import { MessageObjects } from '../data/data';
 import { MessageService } from './message.service';
-import { MessageObj } from '../style/message-obj';
+import { MessageObj } from '../objects/message-obj';
 
 describe('MessageService', () => {
   let testMessage1: MessageObj;
@@ -12,8 +12,8 @@ describe('MessageService', () => {
       providers: [MessageService]
     });
     service = TestBed.get(MessageService);
-    testMessage1 = {message: 'hello', messageId: 0, userId: 0, time: new Date()};
-    testMessage2 = {message: 'world', messageId: 1, userId: 0, time: new Date()};
+    testMessage1 = new MessageObj('hello');
+    testMessage2 = new MessageObj('world');
     MessageObjects.push(testMessage1);
     MessageObjects.push(testMessage2);
   });
@@ -31,7 +31,7 @@ describe('MessageService', () => {
   //   console.log(service.getMessage().map(val => val.json());
   //   service.getMessage().toPromise().then( (result) =>{
   //     console.log("result: "+result)
-  //     //expect(result.message).toEqual("helo")
+  //     //expect(result.message).toEqual('helo')
   //   });
   // });
 

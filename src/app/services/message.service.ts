@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { MessageObj } from '../style/message-obj';
+import { MessageObj } from '../objects/message-obj';
 import { Observable } from 'rxjs';
-import { Subject } from 'rxjs/Subject';
-import { MessageObjects } from '../data/data'
+import { MessageObjects } from '../data/data';
 
 @Injectable()
 export class MessageService {
@@ -15,9 +14,10 @@ export class MessageService {
     MessageObjects.splice(this.getMessageIndexByMessageId(messageId), 1);
   }
 
-  editMessageByMessageId(messageId: number, newMessage: string): boolean {
+
+  editMessageByMessageId(messageId: number, newMessage: string): boolean{
     if (this.messageExists(messageId)) {
-      MessageObjects[this.getMessageIndexByMessageId(messageId)].message = newMessage;
+      MessageObjects[this.getMessageIndexByMessageId(messageId)].setMessage(newMessage);
       return true;
     }
     return false;
@@ -36,7 +36,9 @@ export class MessageService {
 
   private getMessageIndexByMessageId(messageId: number): number {
     for (let i = 0; i < MessageObjects.length; i++) {
-      if (MessageObjects[i].messageId === messageId) {
+
+      if ( MessageObjects[i].getMessageId() === messageId) {
+
         return i;
       }
     }
